@@ -1,9 +1,28 @@
 var express = require('express');
 var router = express.Router();
+const Trip = require('../models/trips');
+const moment = require('moment');
+const Booking = require('../models/bookings');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+
+router.post('/purchase', async (req, res) => {
+  const cartTrip = req.body.trips;
+  // vérification du type de reception []
+  if (!Array.isArray(trips) || trips.length === 0) {
+  return res.status(400).json({ error: 'No trips provided' });
+  
+  try {
+    
+
+  }
+}
+
+
+
+
+
+
+
+
 
 module.exports = router;
