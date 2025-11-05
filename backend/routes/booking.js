@@ -47,11 +47,11 @@ router.get("/purchase", async (req, res) => {
 
     const bookingsWithDelay = bookings.map((booking) => {
       const departureTime = moment(booking.date);
-      const timeUntilDeparture = departureTime.from(now);
+      const timeUntilDeparture = departureTime.from(now); //gestion délai
 
       return {
         ...booking.toObject(), // conversion du document mongoose
-        timeUntilDeparture, // champ ajouté
+        timeUntilDeparture, // ajout du délai
       };
     });
 
@@ -61,6 +61,9 @@ router.get("/purchase", async (req, res) => {
     res.status(500).json({ error: "Erreur serveur lors de la récupération des bookings" });
   }
 });
-
+// up
 
 module.exports = router;
+
+
+
