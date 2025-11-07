@@ -1,6 +1,8 @@
 require('dotenv').config();
 require('./models/connection');
+
 const cors = require('cors');
+const session = require('express-session'); 
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -9,9 +11,31 @@ var logger = require('morgan');
 
 var bookingRouter = require('./routes/booking');
 var tripsRouter = require('./routes/trip');
+var cartRouter = require('./routes/cart.js');
 
 var app = express();
-app.use(cors());
+
+
+app.use(cors({
+  origin: 'http://127.0.0.1:5500', 
+  credentials: true, 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type']
+}));
+
+
+app.use(session({
+  secret: 'tickethack-secret-key-change-in-production', 
+  resave: false,
+  saveUninitialized: false,
+  name: 'tickethack.sid',
+  cookie: { 
+    secure: false,
+    httpOnly: true,
+    sameSite: 'lax',
+    maxAge: 24 * 60 * 60 * 1000 // 24 heures
+  }
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,8 +47,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Routes
 app.use('/booking', bookingRouter);
 app.use('/trip', tripsRouter);
+app.use('/cart', cartRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

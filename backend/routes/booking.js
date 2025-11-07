@@ -61,7 +61,7 @@ router.get("/purchase", async (req, res) => {
     res.status(500).json({ error: "Erreur serveur lors de la récupération des bookings" });
   }
 });
-// up
+
 
 module.exports = router;
 
