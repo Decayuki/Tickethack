@@ -14,11 +14,10 @@
   <body>
     <!-- Header-->
     <header>
-      <div id="logo">Tickethack</div>
+      <div id="logo" onclick="location.href='index.html'" style="cursor:pointer;">Tickethack</div>
       <div id="nav">
-        <button class="btnNav">Cart</button>
-        <button class="btnNav">Bookings</button>
-      </div>
+      <button class="btnNav" onclick="location.href='cart.html'">Cart</button>
+      <button class="btnNav" onclick="location.href='bookings.html'">Bookings</button>
     </header>
 
     <!-- BODY -->
@@ -49,11 +48,12 @@
             <div id="img-container">
             <img id="img-result" src="../images/train.png" />
           </div>
-            <div id ="separetline"></div>
-            <p id="resultText">It's time to book your futre trip.</p>
+            <div id ="separatorline"></div>
+            <p id="resultText">It's time to book your future trip.</p>
           </div>
         </div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

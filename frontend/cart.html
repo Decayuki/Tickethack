@@ -13,10 +13,12 @@
     <!-- A DEV -->
     <!-- Header-->
     <header>
-      <div id="logo">Tickethack</div>
+      <div id="logo" onclick="location.href='index.html'" style="cursor:pointer;">Tickethack</div>
       <div id="nav">
-        <button class="btnNav">Cart</button>
-        <button class="btnNav">Bookings</button>
+      <button class="btnNav" onclick="location.href='cart.html'">Cart</button>
+      <button class="btnNav" onclick="location.href='bookings.html'">Bookings</button>
+  </div>
+</header>
       </div>
     </header>
 
@@ -25,10 +27,7 @@
       <div id="tripContainer">
         <p>My cart</p>
         <div id="tripsList">
-          <div class="trip-item">
-            <p>Paris > Lyon</p>
-            <p>12:30</p>
-            <p>200 €</p>
+
             <button id="delete-btn">✖</button>
           </div>
         </div>
@@ -39,5 +38,6 @@
         </div>
       </div>
     </div>
+    <script src="cart.js"></script>
   </body>
 </html>

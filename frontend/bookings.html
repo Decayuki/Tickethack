@@ -13,10 +13,10 @@
     <!-- A DEV -->
     <!-- Header-->
     <header>
-      <div id="logo">Tickethack</div>
+      <div id="logo" onclick="location.href='index.html'" style="cursor:pointer;">Tickethack</div>
       <div id="nav">
-        <button class="btnNav">Cart</button>
-        <button class="btnNav">Bookings</button>
+      <button class="btnNav" onclick="location.href='cart.html'">Cart</button>
+      <button class="btnNav" onclick="location.href='bookings.html'">Bookings</button>
       </div>
     </header>
 
@@ -25,11 +25,7 @@
       <div id="tripContainer">
         <p>My Bookings</p>
         <div id="tripsList">
-          <div class="trip-item">
-           <p>Paris > Lyon</p>
-            <p>12:30</p>
-            <p>200 €</p>
-            <p>Departure in 5 hours</p>
+
           </div>
         </div>
         <div id="happyTravel">
@@ -38,5 +34,6 @@
         </div>
       </div>
     </div>
+    <script src="bookings.js"></script>
   </body>
 </html>
