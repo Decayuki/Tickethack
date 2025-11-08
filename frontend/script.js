@@ -26,7 +26,7 @@ document.querySelector('#search-btn').addEventListener('click', () => {
             card.classList.add('searchCard');
 
             card.innerHTML = `
-              <div id="inresults">
+              <div id="reserch-trip-item">
                 <p>${trip.departure} ➤ ${trip.arrival}</p>
                 <p>${new Date(trip.date).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}</p>
                 <p>${trip.price}€</p>
@@ -42,7 +42,13 @@ document.querySelector('#search-btn').addEventListener('click', () => {
             resultsDiv.appendChild(card);
           });
         } else {
-          resultsDiv.innerHTML = `<p>No trip found.</p>`;
+          resultsDiv.innerHTML = `<div id="resultContainer">
+            <div id="img-container">
+            <img id="img-result" src="../images/notfound.png" />
+          </div>
+            <div id="separatorline"></div>
+            <p id="resultText">Not trip found.</p>
+          </div>`;
         }
       })
       .catch(err => {

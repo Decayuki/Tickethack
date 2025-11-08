@@ -28,7 +28,7 @@ function displayBookings(bookings) {
 
   if (!bookings || bookings.length === 0) {
     tripsList.innerHTML = 
-    '<p style="text-align:center; padding:20px;">No bookings yet.</p>';
+    '<p style="text-align:center; padding:20px;">Not booking yet.</p>';
     return;
   }
 
