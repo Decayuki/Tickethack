@@ -24,10 +24,11 @@ function loadBookings() {
 function displayBookings(bookings) {
   const tripsList = document.querySelector('#tripsList');
   
-  tripsList.innerHTML = ''; // Vide le contenu 
+  tripsList.innerHTML = ""; // Vide le contenu 
 
   if (!bookings || bookings.length === 0) {
-    tripsList.innerHTML = '<p style="text-align:center; padding:20px;">No bookings yet.</p>';
+    tripsList.innerHTML = 
+    '<p style="text-align:center; padding:20px;">No bookings yet.</p>';
     return;
   }
 
